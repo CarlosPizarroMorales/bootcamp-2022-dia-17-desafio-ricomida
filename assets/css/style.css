@@ -9,23 +9,19 @@ body {
 }
 #carouselExampleIndicators { 
     position: relative;
-}
+} /* Para poder posicionar los indicadores del carousel */
 
 .carousel-indicators {
     position: absolute;
-    bottom: -4rem !important;
-}
+    bottom: -0.8rem !important;
+} /* Indicadores de carousel bajo el carousel */
 
 #carousel button {
     width: 1rem;
     height: 1rem;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
-}
-
-.truco-feo {
-    font-size: 0.1rem;
-}
+} /* Indicadores de carousel circulares */
 
 footer {
     background-color: #dc3545;
