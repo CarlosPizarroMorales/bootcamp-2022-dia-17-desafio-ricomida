@@ -1,14 +1,33 @@
-/* Necesaria para conservar la 
-/* relación de aspecto de la maqueta 
-/* en 1280px. Esta es 1280/300, que
-/* son los píxeles libres como márgenes
-/* blancos. Las utilidades BS no consiguen
-/* un margin o padding tan grande.
-/* Configurar el ancho máximo de la caja 
-/* parece lo más limpio. */
+/* Estas medias queries en un principio
+/* parecían ser necesarias solo para proveer
+/* una relación de aspecto viewport-width / contenido
+/* más fiel a las maquetas, pero otros valores como
+/* el fontsize de los párrafos también 
+/* cambian con la vista, y el line-height de estos 
+/* no es el default, así que se incluirán dentro 
+/* de las reglas. */
+
+/* para 1280x720 */
 @media screen and (min-width: 1280px) {
   .container {
-    max-width: 75% !important;
+    max-width: 77% !important;
+  }
+
+  article p {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+
+/* para iPhone 5/SE (320x568) */
+@media screen and (max-width: 320px) {
+  .container {
+    max-width: 77% !important;
+  }
+
+  article p {
+    font-size: 1rem;
+    line-height: 1.875rem;
   }
 }
 

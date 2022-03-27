@@ -2,9 +2,14 @@
 <html lang="es">
 
 <head>
-  <!-- Metadata: no se olviden de IE 😢, charset y viewport -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Metadata: charset, no se olviden de IE 😢 y viewport -->
+  <!-- NOTA sobre x-ua-compatible: de estar presente, Microsoft -->
+  <!-- recomienda colocar esta directiva lo antes posible  -->
+  <!-- ya que al encontrarla, Explorer comienza nuevamente el  -->
+  <!-- parseo del documento desde el principio. -->
+  <!-- REFERENCIA: https://docs.microsoft.com/en-us/previous-versions/cc817574(v=msdn.10)?redirectedfrom=MSDN -->
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Metadata: describe documento -->
@@ -16,7 +21,7 @@
   <!-- Link a favicon -->
   <link rel="shortcut icon" href="./favicon.png" type="image/png">
 
-  <!-- Links a Google Fonts: Cabin 400 - 700 y Lobster 400 -->
+  <!-- Links a Google Fonts: Cabin 400, 700 y Lobster 400 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
@@ -32,8 +37,14 @@
 </head>
 
 <body>
+  <!-- Testeado en inspector de elementos de Chrome con viewports: -->
+  <!-- 1280px para Web desktop y iPhone 5/SE (320x568) en mobile -->
+  <!-- Relación de aspecto viewport-width y contenido:  -->
+  <!-- 1. Desktop: 1280:980. Hay 300px de margen repartidos en 150x2 -->
+  <!-- 2. Mobile: 320:246. Hay 74px de margen repartidos en 37x2 -->
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <div class="container">
+    <div class="container px-0">
       <a class="navbar-brand" href="#">Ricomida</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,14 +61,14 @@
   </nav>
 
   <!-- Imagen principal, título y botones de contacto -->
-  <header class="container text-dark">
+  <header class="container px-0 text-dark">
     <div class="row">
-      <section class="col-6">
+      <section class="col-12 col-md-6">
         <img class="w-100" src="./assets/img/principal.jpg" alt="Una rica pizza al estilo Chicago con espinacas y champiñones">
       </section>
       <section class="col col-md-6 d-flex flex-column justify-content-evenly">
-        <h1 class="fw-bold pb-4 border-bottom border-2 border-dark ">PIZZA AL ESTILO<br>CHICAGO CON<br>ESPINACAS Y<br>CHAMPIÑONES</h1>
-        <p class="fw-bold">110 MIN / 6 A 8 PORCIONES</p>
+        <h1 class="fw-bold text-center text-md-start pb-4 border-bottom border-2 border-dark ">PIZZA AL ESTILO<br>CHICAGO CON<br>ESPINACAS Y<br>CHAMPIÑONES</h1>
+        <p class="fw-bold text-center text-md-start">110 MIN / 6 A 8 PORCIONES</p>
         <div class="wrapper-botones">
           <button id="enviarCorreo" type="button" class="btn btn-outline-secondary btn-sm me-3" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Presiona para enviar a tu correo">Enviar por correo</button>
           <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="tooltip" data-bs-placement="right" title="Agrega esta receta a tus favoritos">Añadir a favoritos</button>
@@ -65,6 +76,7 @@
       </section>
     </div>
   </header>
+  
   <!-- Carousel que desaparece a partir de breakpoint md -->
   <div id="carousel" class="container d-none d-md-block pb-5 my-5">
     <div id="carouselExampleIndicators" class="carousel slide pb-5 border-bottom border-2 border-dark" data-bs-ride="carousel">
@@ -92,10 +104,11 @@
       </div>
     </div>
   </div>
+  
   <!-- La receta -->
-  <article class="container pb-5 mb-5 d-flex text-dark">
+  <article class="container px-0 pb-5 mb-5 d-flex text-dark">
     <div class="row">
-      <p class="fs-5 col-xs-12 col-md-6"><span class="text-decoration-underline fw-bold">INGREDIENTES</span>
+      <p class="col-xs-12 col-md-6"><span class="text-decoration-underline fw-bold">INGREDIENTES</span>
         <br><br>Masa<br><br>20 gr de levadura seca
         instantánea <br>1 cucharadita de azúcar <br>500 ml agua tibia <br>100 ml aceite vegetal <br>4 cucharadas de
         aceite de oliva <br>65 gr harina de maíz fina (chuchoca) <br>2 cucharaditas de sal <br>625 gr harina
@@ -105,7 +118,7 @@
         espinacas picadas <br>400 gr de champiñones, laminados <br>300 gr de queso mozarella. <br>4 cucharadas queso
         parmesano
       </p>
-      <p class="fs-5 col-xs-12 col-md-6"><span class="text-decoration-underline fw-bold">PREPARACIÓN</span><br><br>
+      <p class="col-xs-12 col-md-6"><span class="text-decoration-underline fw-bold">PREPARACIÓN</span><br><br>
         1. Para la masa, disolver la levadura y el azúcar en agua tibia en un bol grande. Dejar reposar 2 minutos. Agregar
         el aceite, la harina de maíz, sal y 400gr de harina. Mezclar bien. Amasar y agregar el resto de harina, la
         cantidad necesaria para tener una masa blanda. Poner en el mesón y amasar por 5 minutos o hasta tener una masa
@@ -126,12 +139,13 @@
       </p>
     </div>
   </article>
+  
   <!-- Recetas relacionadas -->
-  <section class="container mb-5 pt-3 border-top border-2 border-dark">
+  <section class="container px-0 mb-5 pt-3 border-top border-2 border-dark">
     <h2 class="display-6 text-center fw-bold text-dark mb-5">RECETAS RELACIONADAS</h2>
     <!-- Bloque de .card's. Un solo row que usa css grid con row-cols-...-->
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- .card 1 -->
+      <!-- .card 1 Se utiliza h-100 para forzar el mismo alto. -->
       <div class="col">
         <div class="card h-100">
           <img src="./assets/img/recipe-card-1.png" class="card-img-top" alt="...">
@@ -141,7 +155,7 @@
           </div>
         </div>
       </div>
-      <!-- .card 2 -->
+      <!-- .card 2 Se utiliza h-100 para forzar el mismo alto. -->
       <div class="col">
         <div class="card h-100">
           <img src="./assets/img/recipe-card-2.png" class="card-img-top" alt="...">
@@ -152,7 +166,7 @@
           </div>
         </div>
       </div>
-      <!-- .card 3 -->
+      <!-- .card 3 Se utiliza h-100 para forzar el mismo alto. -->
       <div class="col">
         <div class="card h-100">
           <img src="./assets/img/recipe-card-3.png" class="card-img-top" alt="...">
@@ -164,11 +178,14 @@
         </div>
       </div>
   </section>
+  
   <!-- footer... ¿Debería comentar un footer que se llama <footer>? raro poh.. -->
   <footer class="container-fluid py-5 text-center text-light">
-    <p class="pt-5 fs-3">SUSCRÍBETE EN NUESTRO NEWSLETTER</p>
-    <p class="fs-5">y obtén las mejores recetas que tenemos en <span>Ricomida</span></p>
-    <button class="btn btn-outline-light my-5">Empezar</button>
+    <div class="container px-0">
+      <p class="pt-5 display-5 fw-bold">SUSCRÍBETE EN NUESTRO NEWSLETTER</p>
+      <p class="fs-5 fw-light">y obtén las mejores recetas que tenemos en <span>Ricomida</span></p>
+      <button class="btn btn-outline-light my-5">Empezar</button>
+    </div>
   </footer>
 
   <!-- Script para jQuery 3.6.0 por CDN -->
