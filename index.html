@@ -5,8 +5,8 @@
   <!-- Metadata: charset, no se olviden de IE 😢 y viewport -->
   <!-- NOTA sobre x-ua-compatible: de estar presente, Microsoft -->
   <!-- recomienda colocar esta directiva lo antes posible  -->
-  <!-- ya que al encontrarla, Explorer comienza nuevamente el  -->
   <!-- parseo del documento desde el principio. -->
+  <!-- ya que al encontrarla, Explorer comienza nuevamente el  -->
   <!-- REFERENCIA: https://docs.microsoft.com/en-us/previous-versions/cc817574(v=msdn.10)?redirectedfrom=MSDN -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,6 +43,7 @@
   <!-- 1. Desktop: 1280:980. Hay 300px de margen repartidos en 150x2 -->
   <!-- 2. Mobile: 320:246. Hay 74px de margen repartidos en 37x2 -->
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container px-0">
       <a class="navbar-brand" href="#">Ricomida</a>
@@ -78,7 +79,7 @@
   </header>
   
   <!-- Carousel que desaparece a partir de breakpoint md -->
-  <div id="carousel" class="container d-none d-md-block pb-5 my-5">
+  <div id="carousel" class="container px-0 d-none d-md-block pb-5 my-5">
     <div id="carouselExampleIndicators" class="carousel slide pb-5 border-bottom border-2 border-dark" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -179,24 +180,34 @@
       </div>
   </section>
   
-  <!-- footer... ¿Debería comentar un footer que se llama <footer>? raro poh.. -->
+  <!-- footer... ¿Debería comentar un footer que se llama <footer>? 😒 -->
+  <!-- UPDATE: pues si, porque se distingue rápidamente en el inspector de elementos -->
   <footer class="container-fluid py-5 text-center text-light">
     <div class="container px-0">
       <p class="pt-5 display-5 fw-bold">SUSCRÍBETE EN NUESTRO NEWSLETTER</p>
-      <p class="fs-5 fw-light">y obtén las mejores recetas que tenemos en <span>Ricomida</span></p>
+      <p class="fw-light">y obtén las mejores recetas que tenemos en <span>Ricomida</span></p>
       <button class="btn btn-outline-light my-5">Empezar</button>
     </div>
   </footer>
 
   <!-- Script para jQuery 3.6.0 por CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- Script para el bundle BS de Javascript + Popper por CDN-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <!-- Mi script que hace uso de jquery -->
   <script src="./assets/js/index.js"></script>
-</body>
+  <!-- End of Document -->
 
+  <!-- ! Comentarios, observaciones y notas de desarrollo -->
+  <!-- ! Utilizan la extensión "Better comments" -->
+  <!-- * https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments -->
+  <!-- TODO: General - investigar letter-spacing (AV en maqueta?) -->
+  <!-- TODO: Footer - falta sección del logo -->
+  <!-- TODO: Footer - alargar botón "Empezar" en 320 -->
+  <!-- TODO: Footer - revisar line-heights -->
+  <!-- TODO: Receta - quitar underline en títulos 320 -->
+  <!-- TODO: Header - Alinear botones en 320 -->
+  <!-- TODO: Header - Corregir espacios verticales imagen, textos en 320 -->
+  <!-- TODO: Header - Agregar border-top sobre imagen en 320 -->
+</body>
 </html>
