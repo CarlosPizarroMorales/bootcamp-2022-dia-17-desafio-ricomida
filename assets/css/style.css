@@ -1,4 +1,4 @@
-/* Estas medias queries en un principio
+/* Estas media-queries en un principio
 /* parecían ser necesarias solo para proveer
 /* una relación de aspecto viewport-width / contenido
 /* más fiel a las maquetas, pero otros valores como
@@ -9,12 +9,14 @@
 
 /* para 1280x720 */
 @media screen and (min-width: 1280px) {
+
   .container {
     max-width: 77% !important;
   }
   article p {
     font-size: 1.25rem;
     line-height: 1.875rem;
+    letter-spacing: 0.6px;
   }
 }
 
@@ -40,6 +42,7 @@
   header.container .wrapper-botones .btn {
     font-size: 0.8rem;
     max-width: 47%;
+    padding: 0.5rem !important;
   }
   header.container #enviarCorreo {
     margin-right: 0.7rem !important;
@@ -54,6 +57,7 @@
   article p {
     font-size: 1rem;
     line-height: 1.875rem;
+    letter-spacing: 0.48px;
   }
   footer button {
     width: 100%; 
